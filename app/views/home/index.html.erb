@@ -1,0 +1,261 @@
+<section class="hero-section d-flex align-items-center justify-content-center text-center" style="background: url('<%= asset_path("blur_office_bg.jpg") %>') center center / cover no-repeat; height: 90vh; position: relative;">
+  <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.6); z-index: 1;"></div>
+  
+  <div class="container position-relative z-2">
+    <span class="badge text-dark bg-light px-3 py-2 rounded-pill fw-bold">
+      SPECIAL AWARDS CATEGORY 2025
+    </span>
+
+    <h1 class="text-white fw-bold mt-4 mb-4">
+      Welcome to Grand Award Ceremony, 2025
+    </h1>
+
+    <a href="nomination.html" class="btn btn-primary btn-lg mt-3">
+      <i class="bi bi-person me-2"></i> Click Here To Nominate
+    </a>
+  </div>
+</section>
+
+<section class="section" id="about" style="padding-top: 60px; padding-bottom: 60px;">
+  <div class="container" style="padding-left: 40px; padding-right: 100px;">
+    <div class="row align-items-center" id="counter">
+      <div class="col-md-12 mt-4 pt-2 mt-sm-0 pt-sm-0">
+        <div class="ms-lg-5">
+          <div class="section-title">
+            <h3 class="title mb-4">
+              About Architecture &amp; Interior Design Excellence Awards &amp; Conference 2025 - Hyatt Centric , Candolim , Goa ( Global&nbsp;Edition)
+            </h3>
+            <p class="text-muted" align="justify"> 
+              The Interior and Architecture Awards and Conference National Edition is going to reward Interior Designers, Architects, Designing studios, Interior and Architecture firms, organizations in design world. These Awards are going to be a small token of appreciation for the individuals who are going to make an honorable future of this society.
+            </p>
+            <p class="text-muted" align="justify">
+              All the visionaries who wish to enhance, grow, share, gain and boost within the walls of success and Industrial competition may participate at this conference. It is a great opportunity to bring together an entire community of great Designers, Architects and Creative Minds. It will motivate other great minds to strive towards aphelion.
+            </p>
+            <p class="text-muted" align="justify">
+              The Awards ceremony will be organized on <b>13th June 2025  at Hyatt Centric , Candolim , Goa ( Global&nbsp;Edition).</b> The conference is expected to be honored by ingenious bureaucrats, Global industrial leaders, Top CEOs and Politicians.
+            </p>
+            <p class="text-muted" align="justify">
+              This Ceremony will be presented on various digital landscapes of Social media and news sites. It will be covered by well-known electronic and print media houses and the entire function will be uploaded on Media Websites.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% event = EventDetail.last %>
+
+<section class="event-schedule-section py-5 text-center position-relative" style="background: url('<%= asset_path('world_map.jpg') %>') no-repeat center center / cover; padding-bottom: 60px">
+
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255, 255, 255, 0.93); z-index: 0;"></div>
+
+  <div class="position-relative container" style="z-index: 1;">
+    <h2 class="mb-5 fw-bold">Event Schedule &amp; Venue</h2>
+
+    <div class="row justify-content-center g-4">
+      <div class="col-md-4">
+        <div class="bg-white p-4 rounded text-center h-100">
+          <div class="d-inline-flex align-items-center justify-content-center rounded bg-primary bg-opacity-10 shadow-sm" style="width: 60px; height: 60px;">
+            <i class="bi bi-calendar-event fs-4 text-primary"></i>
+          </div>
+          <h5 class="mt-3 fw-semibold">Event Date</h5>
+          <p class="text-primary mb-0"><%= event.event_date.strftime("%-d %B %Y") %></p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="bg-white p-4 rounded text-center h-100">
+          <div class="d-inline-flex align-items-center justify-content-center rounded bg-primary bg-opacity-10 shadow-sm" style="width: 60px; height: 60px;">
+            <i class="bi bi-geo-alt fs-4 text-primary"></i>
+          </div>
+          <h5 class="mt-3 fw-semibold">Venue</h5>
+          <p class="text-primary mb-0"><%= event.venue %></p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="bg-white p-4 rounded text-center h-100">
+          <div class="d-inline-flex align-items-center justify-content-center rounded bg-primary bg-opacity-10 shadow-sm" style="width: 60px; height: 60px;">
+            <i class="bi bi-clock fs-4 text-primary"></i>
+          </div>
+          <h5 class="mt-3 fw-semibold">Nomination Deadline</h5>
+          <p class="text-primary mb-0"><%= event.nomination_deadline.strftime("%-d %B %Y") %></p>
+        </div>
+      </div>
+    </div>
+
+    <a href="/nomination" class="btn btn-primary mt-5 px-4 py-2 fs-5">
+      Nominate Now <i class="bi bi-arrow-right ms-2"></i>
+    </a>
+  </div>
+</section>
+
+<section class="py-5 bg-light" id="past-speakers">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-dark">Past Speakers</h2>
+    </div>
+
+    <div class="row g-4">
+      <!-- Speaker Card 1 -->
+      <div class="col-12 col-md-4">
+        <div class="card text-center h-100 shadow-sm rounded-4">
+          <div class="card-body d-flex flex-column align-items-center">
+            <%= image_tag "past_speakers_images/1.jpg", alt: "Shri Krishnarao Jaisim", class: "rounded-circle mb-3", style: "width: 200px; height: 200px;" %>
+            <h5 class="card-title fw-semibold">Shri Krishnarao Jaisim</h5>
+            <p class="card-text text-muted">JAISIM – FOUNTAINHEAD</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speaker Card 2 -->
+      <div class="col-12 col-md-4">
+        <div class="card text-center h-100 shadow-sm rounded-4">
+          <div class="card-body d-flex flex-column align-items-center">
+            <%= image_tag "past_speakers_images/2.jpg", alt: "Dr. Gopalan Nair Shankar", class: "rounded-circle mb-3", style: "width: 200px; height: 200px;" %>
+            <h5 class="card-title fw-semibold">Dr. Gopalan Nair Shankar</h5>
+            <p class="card-text text-muted">(People’s Architect, Padmashree Awardee)<br>Habitat Technology Group</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speaker Card 3 -->
+      <div class="col-12 col-md-4">
+        <div class="card text-center h-100 shadow-sm rounded-4">
+          <div class="card-body d-flex flex-column align-items-center">
+            <%= image_tag "past_speakers_images/3.jpg", alt: "Dr. Oscar G. Concessao", class: "rounded-circle mb-3", style: "width: 200px; height: 200px;" %>
+            <h5 class="card-title fw-semibold">Dr. Oscar G. Concessao</h5>
+            <p class="card-text text-muted">Ponni & Oscar + Rahul Architects, Chennai</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speaker Card 4 -->
+      <div class="col-12 col-md-4">
+        <div class="card text-center h-100 shadow-sm rounded-4">
+          <div class="card-body d-flex flex-column align-items-center">
+            <%= image_tag "past_speakers_images/4.jpg", alt: "Prof Dr Vibhuti Sachdev", class: "rounded-circle mb-3", style: "width: 200px; height: 200px;" %>
+            <h5 class="card-title fw-semibold">Prof Dr Vibhuti Sachdev</h5>
+            <p class="card-text text-muted">Dean and Director, Architecture and Design, Gitam University,Visakhapatnam</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speaker Card 5 -->
+      <div class="col-12 col-md-4">
+        <div class="card text-center h-100 shadow-sm rounded-4">
+          <div class="card-body d-flex flex-column align-items-center">
+            <%= image_tag "past_speakers_images/5.jpg", alt: "Dr. Ms. Ponni M. Concessao Founder & Principal Architect", class: "rounded-circle mb-3", style: "width: 200px; height: 200px;" %>
+            <h5 class="card-title fw-semibold">Dr. Ms. Ponni M. Concessao Founder & Principal Architect</h5>
+            <p class="card-text text-muted">Ponni & Oscar + Rahul Architects, Chennai</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speaker Card 6 -->
+      <div class="col-12 col-md-4">
+        <div class="card text-center h-100 shadow-sm rounded-4">
+          <div class="card-body d-flex flex-column align-items-center">
+            <%= image_tag "past_speakers_images/6.jpg", alt: "Prof. Dr Ajai Chandran C K", class: "rounded-circle mb-3", style: "width: 200px; height: 200px;" %>
+            <h5 class="card-title fw-semibold">Prof. Dr Ajai Chandran C K</h5>
+            <p class="card-text text-muted">Professor School of Architecture, Christ University Bangalore</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speaker Card 7 -->
+      <div class="col-12 col-md-4">
+        <div class="card text-center h-100 shadow-sm rounded-4">
+          <div class="card-body d-flex flex-column align-items-center">
+            <%= image_tag "past_speakers_images/7.jpg", alt: "Mr. Mohd. Amin Nayyar", class: "rounded-circle mb-3", style: "width: 200px; height: 200px;" %>
+            <h5 class="card-title fw-semibold">Mr. Mohd. Amin Nayyar</h5>
+            <p class="card-text text-muted">ANA DESIGN STUDIO PVT LTD, New Delhi</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speaker Card 8 -->
+      <div class="col-12 col-md-4">
+        <div class="card text-center h-100 shadow-sm rounded-4">
+          <div class="card-body d-flex flex-column align-items-center">
+            <%= image_tag "past_speakers_images/8.jpg", alt: "Dean Gabriel D'Cruz", class: "rounded-circle mb-3", style: "width: 200px; height: 200px;" %>
+            <h5 class="card-title fw-semibold">Dean Gabriel D'Cruz</h5>
+            <p class="card-text text-muted">Architect, Creative Head Mozaic</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speaker Card 9 -->
+      <div class="col-12 col-md-4">
+        <div class="card text-center h-100 shadow-sm rounded-4">
+          <div class="card-body d-flex flex-column align-items-center">
+            <%= image_tag "past_speakers_images/10.jpg", alt: "Prof . Dr. Jan Dieterle", class: "rounded-circle mb-3", style: "width: 200px; height: 200px" %>
+            <h5 class="card-title fw-semibold">Prof . Dr. Jan Dieterle</h5>
+            <p class="card-text text-muted">University of Stuttgart , Germany</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mt-5">
+        <div class="section-title mb-4 pb-2">
+          <h4 class="title mb-4">Some of Our Premium Awardees</h4>
+        </div>
+      </div>
+    </div>
+
+    <div id="awardeesCarousel" class="carousel slide position-relative" data-bs-ride="carousel">
+      <div class="carousel-inner text-center">
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-md-4">
+              <%= image_tag "premium_awardees_images/1.jpg", class: "d-block mx-auto img-fluid avatar avatar-small", alt: "Awardee 1" %>
+            </div>
+            <div class="col-md-4">
+              <%= image_tag "premium_awardees_images/2.jpg", class: "d-block mx-auto img-fluid avatar avatar-small", alt: "Awardee 2" %>
+            </div>
+            <div class="col-md-4">
+              <%= image_tag "premium_awardees_images/3.jpg", class: "d-block mx-auto img-fluid avatar avatar-small", alt: "Awardee 3" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-md-4">
+              <%= image_tag "premium_awardees_images/4.jpg", class: "d-block mx-auto img-fluid avatar avatar-small", alt: "Awardee 4" %>
+            </div>
+            <div class="col-md-4">
+              <%= image_tag "premium_awardees_images/5.jpg", class: "d-block mx-auto img-fluid avatar avatar-small", alt: "Awardee 5" %>
+            </div>
+            <div class="col-md-4">
+              <%= image_tag "premium_awardees_images/6.jpg", class: "d-block mx-auto img-fluid avatar avatar-small", alt: "Awardee 6" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-md-4">
+              <%= image_tag "premium_awardees_images/7.jpg", class: "d-block mx-auto img-fluid avatar avatar-small", alt: "Awardee 7" %>
+            </div>
+            <div class="col-md-4">
+              <%= image_tag "premium_awardees_images/8.jpg", class: "d-block mx-auto img-fluid avatar avatar-small", alt: "Awardee 8" %>
+            </div>
+            <div class="col-md-4">
+              <%= image_tag "premium_awardees_images/9.jpg", class: "d-block mx-auto img-fluid avatar avatar-small", alt: "Awardee 9" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-indicators mt-3">
+        <button type="button" data-bs-target="#awardeesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#awardeesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#awardeesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+    </div>
+  </div>
+</section>
