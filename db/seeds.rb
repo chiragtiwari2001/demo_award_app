@@ -14,3 +14,9 @@ User.create(
   password: "admin_password",
   password_confirmation: "admin_password"
 )
+
+EventDetail.create!(
+  event_date: Date.new(2025, 6, 13),
+  venue: "Hyatt Centric, Candolim, Goa",
+  nomination_deadline: Date.new(2025, 5, 18)
+)
