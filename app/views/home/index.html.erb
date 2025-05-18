@@ -1,3 +1,4 @@
+<!-- Home Section -->
 <section class="hero-section d-flex align-items-center justify-content-center text-center" style="background: url('<%= asset_path("blur_office_bg.jpg") %>') center center / cover no-repeat; height: 90vh; position: relative;">
   <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.6); z-index: 1;"></div>
   
@@ -10,12 +11,13 @@
       Welcome to Grand Award Ceremony, 2025
     </h1>
 
-    <a href="nomination.html" class="btn btn-primary btn-lg mt-3">
+    <a href="<%= new_nomination_path %>" class="btn btn-primary btn-lg mt-3">
       <i class="bi bi-person me-2"></i> Click Here To Nominate
     </a>
   </div>
 </section>
 
+<!-- About Section -->
 <section class="section" id="about" style="padding-top: 60px; padding-bottom: 60px;">
   <div class="container" style="padding-left: 40px; padding-right: 100px;">
     <div class="row align-items-center" id="counter">
@@ -44,6 +46,7 @@
   </div>
 </section>
 
+<!-- Event Details Section -->
 <% event = EventDetail.last %>
 
 <section class="event-schedule-section py-5 text-center position-relative" style="background: url('<%= asset_path('world_map.jpg') %>') no-repeat center center / cover; padding-bottom: 60px">
@@ -85,12 +88,13 @@
       </div>
     </div>
 
-    <a href="/nomination" class="btn btn-primary mt-5 px-4 py-2 fs-5">
+    <a href="<%= new_nomination_path %>" class="btn btn-primary mt-5 px-4 py-2 fs-5">
       Nominate Now <i class="bi bi-arrow-right ms-2"></i>
     </a>
   </div>
 </section>
 
+<!-- Past Speakers Section -->
 <section class="py-5 bg-light" id="past-speakers">
   <div class="container">
     <div class="text-center mb-5">
@@ -255,6 +259,312 @@
         <button type="button" data-bs-target="#awardeesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#awardeesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#awardeesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Nominate Section -->
+<section class="py-5" id="why-nominate">
+  <div class="container" style="padding-left: 50px; padding-right: 50px;">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-dark">Why Nominate</h2>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6">
+        <div class="d-flex align-items-start">
+          <div class="me-3 flex-shrink-0">
+            <i class="bi bi-check-circle text-primary fs-4"></i>
+          </div>
+          <div class="text-justify">
+            <h5><span class="text-primary">Gain</span> recognition and celebrate your hard work and achievements</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex align-items-start">
+          <div class="me-3 flex-shrink-0">
+            <i class="bi bi-check-circle text-primary fs-4"></i>
+          </div>
+          <div class="text-justify">
+            <h5 class="mb-2"><span class="text-primary">Enhance</span> your profile and promote your business to potential new customers</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex align-items-start">
+          <div class="me-3 flex-shrink-0">
+            <i class="bi bi-check-circle text-primary fs-4"></i>
+          </div>
+          <div class="text-justify">
+            <h5 class="mb-2"><span class="text-primary">Boost</span> your workplace morale and encourage further innovation</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex align-items-start">
+          <div class="me-3 flex-shrink-0">
+            <i class="bi bi-check-circle text-primary fs-4"></i>
+          </div>
+          <div class="text-justify">
+            <h5 class="mb-2"><span class="text-primary">Grow</span> your network and connect with other influential business leaders</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex align-items-start">
+          <div class="me-3 flex-shrink-0">
+            <i class="bi bi-check-circle text-primary fs-4"></i>
+          </div>
+          <div class="text-justify">
+            <h5 class="mb-2"><span class="text-primary">Share</span> your insight into best practice and learn from fellow professionals</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex align-items-start">
+          <div class="me-3 flex-shrink-0">
+            <i class="bi bi-check-circle text-primary fs-4"></i>
+          </div>
+          <div class="text-justify">
+            <h5 class="mb-2"><span class="text-primary">Improve</span> your business through PR, News Sites and Social Media</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Selection Process Section -->
+<section class="py-5 bg-light" id="selection-process">
+  <div class="container" style="padding-left: 50px;">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-dark">Selection Process</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="selection-steps">
+          <div class="d-flex mb-4">
+            <div class="me-3 flex-shrink-0">
+              <i class="bi bi-check-circle text-primary fs-5"></i>
+            </div>
+            <div>
+              <p class="mb-0 text-muted fs-6">Step 1: You need to fill your nomination online.</p>
+            </div>
+          </div>
+
+          <div class="d-flex mb-4">
+            <div class="me-3 flex-shrink-0">
+              <i class="bi bi-check-circle text-primary fs-5"></i>
+            </div>
+            <div>
+              <p class="mb-0 text-muted fs-6">Step 2: You may choose the best category that describes your Organization/ Firm / Company/ Individual.</p>
+            </div>
+          </div>
+
+          <div class="d-flex mb-4">
+            <div class="me-3 flex-shrink-0">
+              <i class="bi bi-check-circle text-primary fs-5"></i>
+            </div>
+            <div>
+              <p class="mb-0 text-muted fs-6">Step 3: There will be a Telephonic interview, which will be conducted for nominated Organization/ Firm / Company/ Individual.</p>
+            </div>
+          </div>
+
+          <div class="d-flex mb-4">
+            <div class="me-3 flex-shrink-0">
+              <i class="bi bi-check-circle text-primary fs-5"></i>
+            </div>
+            <div>
+              <p class="mb-0 text-muted fs-6">Step 4: Documents submission Organization profile, work, achievements, portfolio</p>
+            </div>
+          </div>
+
+          <div class="d-flex mb-4">
+            <div class="me-3 flex-shrink-0">
+              <i class="bi bi-check-circle text-primary fs-5"></i>
+            </div>
+            <div>
+              <p class="mb-0 text-muted fs-6">Step 5: The submissions will be evaluated by esteemed Jury members.</p>
+            </div>
+          </div>
+
+          <div class="d-flex mb-4">
+            <div class="me-3 flex-shrink-0">
+              <i class="bi bi-check-circle text-primary fs-5"></i>
+            </div>
+            <div>
+              <p class="mb-0 text-muted fs-6">Step 6: Announcements of the results will be made on or before 20th May 2025.</p>
+            </div>
+          </div>
+
+          <div class="d-flex mb-4">
+            <div class="me-3 flex-shrink-0">
+              <i class="bi bi-check-circle text-primary fs-5"></i>
+            </div>
+            <div>
+              <p class="mb-0 text-muted fs-6">Step 7: Then we have The Grand Award ceremony with networking lunch With Networking Dinner at Hyatt Centric, Candolim, Goa</p>
+            </div>
+          </div>
+
+          <div class="d-flex mb-4">
+            <div class="me-3 flex-shrink-0">
+              <i class="bi bi-check-circle text-primary fs-5"></i>
+            </div>
+            <div>
+              <p class="mb-0 text-muted fs-6">Step 8: Release of Event videos and photos at Press.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5 d-flex align-items-center justify-content-center">
+        <%= image_tag "selection_process_images/selection.jpg", alt: "Award Recipient", class: "img-fluid rounded shadow", style: "max-height: 500px; margin-bottom: 100px" %>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="<%= new_nomination_path %>" class="btn btn-primary px-4 py-2">
+        Nominate Now <i class="bi bi-arrow-right ms-2"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5" id="faq">
+  <div class="container" style="padding-left: 50px; padding-right: 50px;">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-dark">Frequently Asked <span class="text-primary">Questions</span></h2>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item border mb-3 rounded shadow-sm">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                Who organizes and curates these conference and awards?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                The Architecture & Interior Design Excellence Awards & Conference 2025- Global Edition is curated & organized by one of the leading Analytics and Research Company Beginup Research Intelligence Private limited, Bangalore. The conference and awards are purely owned by Beginup Research Intelligence Private limited.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border mb-3 rounded shadow-sm">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                What is the selection process?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                The selection is based on telephonic interview with each Nominee, Work Growth , Employment Generated and Quality of service provided. The selection and category allotment is solely decided by internal comitee of the organizer.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border mb-3 rounded shadow-sm">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                If the Nominee is unable to attend the Conference, can they still register and participate for the awards?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                Yes, If the Nominee is unable to attend the Conference, they can still participate. A family member or friend can collect the Award on behalf of the Awardee or the Award Kit will be sent by courier to the Winner.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border mb-3 rounded shadow-sm">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Will the information provided by the Nominees be kept confidential?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                Any type of Data or information shared by the Nominees will be only used for comparison between different Nominees so as to select winners. The information will not be shared with any Third Party or made public under any circumstances. Your privacy is our priority.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border mb-3 rounded shadow-sm">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Can the awardee get additional passes for the conference?
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                Yes, the Awardee can buy additional passes for their Friends, Family and Colleagues.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border mb-3 rounded shadow-sm">
+            <h2 class="accordion-header" id="headingSix">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                What will be the awards?
+              </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                The Winner will get a Trophy, Certificate, Appreciation Letter and a Goody bag.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border mb-3 rounded shadow-sm">
+            <h2 class="accordion-header" id="headingSeven">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                When will the selected nominees be declared?
+              </button>
+            </h2>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                The selected Nominees will be declared on or before 30th May 2025. The ID card and Conference Pass will be sent to their addresses.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border mb-3 rounded shadow-sm">
+            <h2 class="accordion-header" id="headingEight">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                When and where will be the award and conference be held?
+              </button>
+            </h2>
+            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                The Event will be held on 11th July 2025, Taj West End, Bengaluru ( Global Edition)..
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border mb-3 rounded shadow-sm">
+            <h2 class="accordion-header" id="headingNine">
+              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                Are there any charges for nomination?
+              </button>
+            </h2>
+            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                No, there are no charges for the nomination. However, on being selected, the selected nominees will have to pay conference fees as applicable.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
