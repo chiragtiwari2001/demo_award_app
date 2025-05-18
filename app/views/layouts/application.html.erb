@@ -43,6 +43,30 @@
       </nav>
     <% end %>
 
+    <% if flash.any? %>
+      <div class="flash-container">
+        <% flash.each do |key, message| %>
+          <div class="alert alert-<%= key == 'notice' ? 'info' : (key == 'success' ? 'success' : (key == 'alert' ? 'warning' : 'danger')) %> alert-dismissible fade show flash-message" role="alert">
+            <%= message %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
     <%= yield %>
+
+    <% if flash.any? %>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(function() {
+            const flashMessages = document.querySelectorAll('.flash-message');
+            flashMessages.forEach(function(flashMessage) {
+              bootstrap.Alert.getOrCreateInstance(flashMessage).close();
+            });
+          }, 5000);
+        });
+      </script>
+    <% end %>
   </body>
 </html>

@@ -1,0 +1,151 @@
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div class="card-header bg-secondary text-white">
+          <h2 class="card-title mb-0">NATIONAL ARCHITECTURE AND INTERIOR DESIGN EXCELLENCE AWARDS AND CONFERENCE 2025 , TAJ WEST END( Global Special Edition ) ( 24TH EDITION )</h2>
+
+          <br>
+
+          <p style="font-size: 13px;">
+            Applicants are requested to read the category carefully. Applicants can contact us on 8197149916 / 8296009081 for any query.<br>
+            Note 1- This nomination form gives us the consent to contact you for further evaluation . The project and detailed company profile submission will be asked at the evaluation stage.
+          </p>
+        </div>
+        <div class="card-body">
+          <% if @nomination.errors.any? %>
+            <div class="alert alert-danger">
+              <h4><%= pluralize(@nomination.errors.count, "error") %> prohibited this nomination from being saved:</h4>
+              <ul>
+                <% @nomination.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <%= form_with(model: @nomination, local: true, class: "needs-validation") do |form| %>
+            <div class="mb-3">
+              <%= form.label :organization_name, "Organization Name", class: "form-label required" %>
+              <%= form.text_field :organization_name, class: "form-control", required: true %>
+            </div>
+
+            <div class="mb-3">
+              <%= form.label :nominee_name, "Nominee Name", class: "form-label required" %>
+              <%= form.text_field :nominee_name, class: "form-control", required: true %>
+            </div>
+
+            <div class="mb-3">
+              <%= form.label :nominee_age, "Nominee Age", class: "form-label required" %>
+              <%= form.number_field :nominee_age, class: "form-control", min: 1, required: true %>
+            </div>
+
+            <div class="mb-3">
+              <%= form.label :contact_number, "Contact Number", class: "form-label required" %>
+              <%= form.telephone_field :contact_number, class: "form-control", required: true %>
+            </div>
+
+            <div class="mb-3">
+              <%= form.label :email, "Email", class: "form-label required" %>
+              <%= form.email_field :email, class: "form-control", required: true %>
+            </div>
+
+            <div class="mb-3">
+              <%= form.label :correspondence_address, "Correspondence Address with City & State Names", class: "form-label" %>
+              <%= form.text_area :correspondence_address, class: "form-control", rows: 3 %>
+            </div>
+
+            <div class="mb-3">
+              <%= form.label :firm_type, "Type / Nature of Firm / Company", class: "form-label required" %>
+
+              <div class="form-check">
+                <%= form.radio_button :firm_type, "Architecture Firm / Company", class: "form-check-input", required: true %>
+                <%= form.label :firm_type_architecture, "Architecture Firm / Company", class: "form-check-label" %>
+              </div>
+
+              <div class="form-check">
+                <%= form.radio_button :firm_type, "Interior Design Firm / Company", class: "form-check-input" %>
+                <%= form.label :firm_type_interior, "Interior Design Firm / Company", class: "form-check-label" %>
+              </div>
+
+              <div class="form-check">
+                <%= form.radio_button :firm_type, "Architecture & Interior Design Firm / Company", class: "form-check-input" %>
+                <%= form.label :firm_type_both, "Architecture & Interior Design Firm / Company", class: "form-check-label" %>
+              </div>
+
+              <div class="form-check">
+                <%= form.radio_button :firm_type, "Interior Design Institutes", class: "form-check-input" %>
+                <%= form.label :firm_type_institutes, "Interior Design Institutes", class: "form-check-label" %>
+              </div>
+
+              <div class="form-check">
+                <%= form.radio_button :firm_type, "Architecture Schools / Colleges", class: "form-check-input" %>
+                <%= form.label :firm_type_schools, "Architecture Schools / Colleges", class: "form-check-label" %>
+              </div>
+
+              <div class="form-check">
+                <%= form.radio_button :firm_type, "Brands Serving in Interior & Architecture Products / Services", class: "form-check-input" %>
+                <%= form.label :firm_type_brands, "Brands Serving in Interior & Architecture Products / Services", class: "form-check-label" %>
+              </div>
+
+              <div class="form-check">
+                <%= form.radio_button :firm_type, "Freelance Interior Designer / Architect", class: "form-check-input" %>
+                <%= form.label :firm_type_freelance, "Freelance Interior Designer / Architect", class: "form-check-label" %>
+              </div>
+
+              <div class="form-check">
+                <%= form.radio_button :firm_type, "Other", class: "form-check-input", id: "firm_type_other_radio" %>
+                <%= form.label :firm_type_other, "Other", class: "form-check-label" %>
+                <%= text_field_tag :firm_type_other, nil, class: "form-control mt-2", id: "firm_type_other_text", style: "display: none;", placeholder: "Please specify" %>
+              </div>
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <%= form.submit "Submit", class: "btn btn-primary" %>
+              <%= link_to "Cancel", root_path, class: "btn btn-secondary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .form-label.required:after {
+    content: " *";
+    color: red;
+  }
+</style>
+
+<script>
+  document.addEventListener('turbo:load', function() {
+    setupFirmTypeOther();
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    setupFirmTypeOther();
+  });
+
+  function setupFirmTypeOther() {
+    const otherRadio = document.getElementById('firm_type_other_radio');
+    const otherField = document.getElementById('firm_type_other_text');
+
+    if (otherRadio && otherField) {
+      otherRadio.addEventListener('change', function() {
+        otherField.style.display = this.checked ? 'block' : 'none';
+      });
+
+      otherField.style.display = otherRadio.checked ? 'block' : 'none';
+      document.querySelectorAll('input[name="nomination[firm_type]"]').forEach(function(radio) {
+        if (radio.id !== 'firm_type_other_radio') {
+          radio.addEventListener('change', function() {
+            if (this.checked) {
+              otherField.style.display = 'none';
+            }
+          });
+        }
+      });
+    }
+  }
+</script>
