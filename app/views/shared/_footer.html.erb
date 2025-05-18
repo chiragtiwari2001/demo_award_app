@@ -1,0 +1,104 @@
+<!-- Footer Section -->
+<footer class="pt-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <!-- About us Column -->
+      <div class="col-md-4 mb-4">
+        <h5 class="mb-4">About us</h5>
+        <div class="mb-4">
+          <%= image_tag "footer_images/beginup_logo.jpg", alt: "BeginUp Logo", class: "img-fluid", style: "max-width: 250px;" %>
+        </div>
+        <p class="text-muted">
+          BEGINUP RESEARCH INTELLIGENCE PRIVATE LIMITED is a cutting edge Corporate Research, Data Science and Technology company helping business and brands achieve organization growth maps. Beginup Headquarter is located in Bengaluru.
+        </p>
+      </div>
+
+      <!-- Contact Us Column -->
+      <div class="col-md-4 mb-4" id="contact">
+        <h5 class="mb-4">Contact Us</h5>
+        
+        <div class="d-flex align-items-start mb-3">
+          <div class="me-3">
+            <i class="bi bi-envelope text-primary"></i>
+          </div>
+          <div>
+            <p class="mb-0">Email</p>
+            <a href="mailto:globaldesignawards@gmail.com" class="text-primary text-decoration-none">globaldesignawards@gmail.com</a><br>
+            <a href="mailto:sonia@designawardsindia.com" class="text-primary text-decoration-none">sonia@designawardsindia.com</a>
+          </div>
+        </div>
+        
+        <div class="d-flex align-items-start mb-3">
+          <div class="me-3">
+            <i class="bi bi-telephone text-primary"></i>
+          </div>
+          <div>
+            <p class="mb-0">Phone</p>
+            <a href="tel:+918296009081" class="text-primary text-decoration-none">+91 8296009081</a> / 
+            <a href="tel:+918197149916" class="text-primary text-decoration-none">+91 8197149916</a>
+          </div>
+        </div>
+        
+        <div class="d-flex align-items-start">
+          <div class="me-3">
+            <i class="bi bi-geo-alt text-primary"></i>
+          </div>
+          <div>
+            <p class="mb-0">Location</p>
+            <address class="text-muted mb-0">
+              C/O Beginup Ventures India No. 87, 3rd Cross, 2nd Floor, Jai Hanuman Nagar, Sai Baba Temple Road, 80-Feet BDA Road, Arekere, Bengaluru, Karnataka 560076, India
+            </address>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nominate Column -->
+      <div class="col-md-4 mb-4">
+        <h5 class="mb-4">Nominate</h5>
+        <p class="mb-3">Please click here to nominate.</p>
+        <a href="<%= new_nomination_path %>" class="btn btn-primary mb-4">
+          Nominate Now <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+        
+        <h5 class="mb-3">Partner Sites</h5>
+        <a href="http://www.designsandstories.com" target="_blank" class="text-primary text-decoration-none">
+          www.designsandstories.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright bar -->
+  <div class="mt-5 border-top" style="background-color: grey;">
+    <div class="container py-3">
+      <div class="text-center">
+        <p class="mb-0 text-white">© 2025 BEGINUP RESEARCH INTELLIGENCE PRIVATE LIMITED</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top button -->
+<a href="#" class="btn btn-primary btn-icon back-to-top" style="position: fixed; bottom: 20px; right: 20px; display: none;">
+  <i class="bi bi-arrow-up"></i>
+</a>
+
+<!-- Script for back to top button -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var backToTopBtn = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.style.display = 'block';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+    
+    backToTopBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+  });
+</script>
