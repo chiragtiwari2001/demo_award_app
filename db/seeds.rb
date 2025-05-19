@@ -20,3 +20,9 @@ EventDetail.create!(
   venue: "Hyatt Centric, Candolim, Goa",
   nomination_deadline: Date.new(2025, 5, 18)
 )
+
+AdminUser.create!(
+  email: 'admin@example.com', 
+  password: 'password', 
+  password_confirmation: 'password'
+) if Rails.env.development?
