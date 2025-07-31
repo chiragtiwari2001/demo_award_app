@@ -16,9 +16,9 @@ User.create(
 )
 
 EventDetail.create!(
-  event_date: Date.new(2025, 6, 13),
-  venue: "Hyatt Centric, Candolim, Goa",
-  nomination_deadline: Date.new(2025, 5, 18)
+  event_date: Date.new(2025, 11, 22),
+  venue: "Gift City Garba Ground, Gandhinagar",
+  nomination_deadline: Date.new(2025, 8, 30)
 )
 
 AdminUser.create!(

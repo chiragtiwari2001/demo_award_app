@@ -3,12 +3,12 @@
     <div class="col-md-8">
       <div class="card shadow">
         <div class="card-header bg-secondary text-white">
-          <h2 class="card-title mb-0">NATIONAL ARCHITECTURE AND INTERIOR DESIGN EXCELLENCE AWARDS AND CONFERENCE 2025 , TAJ WEST END( Global Special Edition ) ( 24TH EDITION )</h2>
+          <h2 class="card-title mb-0">Architectural & Interior Designers Awards 2025</h2>
 
           <br>
 
           <p style="font-size: 13px;">
-            Applicants are requested to read the category carefully. Applicants can contact us on 8197149916 / 8296009081 for any query.<br>
+            Applicants are requested to read the category carefully. Applicants can contact us on 7389863009 / 9826026839 for any query.<br>
             Note 1- This nomination form gives us the consent to contact you for further evaluation . The project and detailed company profile submission will be asked at the evaluation stage.
           </p>
         </div>
@@ -24,7 +24,8 @@
             </div>
           <% end %>
 
-          <%= form_with(model: @nomination, local: true, class: "needs-validation") do |form| %>
+          <%= form_with(model: @nomination, local: true, data: { turbo: false }, class: "needs-validation") do |form| %>
+
             <div class="mb-3">
               <%= form.label :organization_name, "Organization Name", class: "form-label required" %>
               <%= form.text_field :organization_name, class: "form-control", required: true %>

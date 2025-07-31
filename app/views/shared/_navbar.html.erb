@@ -1,7 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 sticky-top">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-start flex-column flex-lg-row gap-2" href="#">
-      <%= image_tag("Designawards.png", alt: "Logo", class: "me-lg-2") %>
+    <a class="navbar-brand d-flex align-items-center gap-3" href="#">
+      <%= image_tag("awards2.jpeg", alt: "Logo", class: "logo-img") %>
+      <span class="brand-text">
+        Architectural & Interior<br />
+        Designers Awards 2025
+      </span>
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
@@ -10,13 +14,27 @@
 
     <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase fw-semibold">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#why-nominate">Why Nominate</a></li>
-        <li class="nav-item"><a class="nav-link" href="#selection-process">Selection Process</a></li>
-        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link" href="#past-speakers">Past Speakers</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item">
+          <%= link_to "Home", root_path(anchor: "home"), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "About", root_path(anchor: "about"), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Why Nominate", root_path(anchor: "why-nominate"), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Selection Process", root_path(anchor: "selection-process"), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "FAQ", root_path(anchor: "faq"), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Past Speakers", root_path(anchor: "past-speakers"), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Contact", root_path(anchor: "contact"), class: "nav-link" %>
+        </li>
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %>
@@ -24,5 +42,6 @@
         <% end %>
       </ul>
     </div>
+
   </div>
 </nav>
