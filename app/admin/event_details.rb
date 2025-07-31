@@ -1,18 +1,13 @@
 ActiveAdmin.register EventDetail do
+  permit_params :event_date, :venue, :nomination_deadline
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  # permit_params :event_date, :venue, :nomination_deadline
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:event_date, :venue, :nomination_deadline]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  
+  # Optional: Customize form if needed
+  form do |f|
+    f.inputs do
+      f.input :event_date
+      f.input :venue
+      f.input :nomination_deadline
+    end
+    f.actions
+  end
 end

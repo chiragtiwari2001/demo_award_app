@@ -4,8 +4,42 @@
 // === Navbar Styles ===
 
 // Adjusted logo size
-.navbar-brand img {
-  max-height: 80px;
+// === Brand Logo + Text ===
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .logo-img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .brand-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #000;
+    line-height: 1.2;
+    white-space: normal;
+    max-width: 200px; // optional, controls wrap point
+  }
+}
+
+// === Responsive Adjustments for Brand ===
+@media (max-width: 768px) {
+  .navbar-brand {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .navbar-brand .logo-img {
+    height: 60px;
+  }
+
+  .navbar-brand .brand-text {
+    font-size: 0.9rem;
+  }
 }
 
 // Smaller font for nav links
